@@ -3,7 +3,7 @@
 
 # it is assumed your projects live in Sites.
 VIRTUAL_ENV_NAME=`basename $VIRTUAL_ENV`
-VIRTUAL_ENV_CHECKOUT_DIRECTORY=`echo $VIRTUAL_ENV | sed 's/.virtualenvs/Sites/'`
+VIRTUAL_ENV_CHECKOUT_DIRECTORY=`echo $VIRTUAL_ENV | sed 's/.virtualenvs/projects/'`
 
 if [ -d $VIRTUAL_ENV_CHECKOUT_DIRECTORY ]; then
     cd $VIRTUAL_ENV_CHECKOUT_DIRECTORY
@@ -28,7 +28,7 @@ function _initialize_shortcuts {
     }
     
     function cdsrc {
-        cd "$VIRTUAL_ENV_CHECKOUT_DIRECTORY/src/$1"
+        cd "$VIRTUAL_ENV_CHECKOUT_DIRECTORY/sources/$1"
     }
     
     alias cdco="cd $VIRTUAL_ENV_CHECKOUT_DIRECTORY"
@@ -46,7 +46,7 @@ function _initialize_shortcuts {
     
     function _list_virtual_env_source_dir() {
         local matches cur
-        matches=`ls "$VIRTUAL_ENV_CHECKOUT_DIRECTORY/src"`
+        matches=`ls "$VIRTUAL_ENV_CHECKOUT_DIRECTORY/sources"`
         COMPREPLY=()
         cur="${COMP_WORDS[COMP_CWORD]}"
         COMPREPLY=( $(compgen -W "${matches}" -- ${cur}) )
