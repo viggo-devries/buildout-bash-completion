@@ -1,5 +1,5 @@
-HOW TO USE
-==========
+HOW TO INSTALL
+==============
 
 Add the content of postactive to your postactive file in the virtualenv folder usually located at ~/.virtualenvs/postactivate
 
