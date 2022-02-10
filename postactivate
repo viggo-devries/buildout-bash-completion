@@ -5,16 +5,16 @@
 VIRTUAL_ENV_NAME=`basename $VIRTUAL_ENV`
 VIRTUAL_ENV_CHECKOUT_DIRECTORY=`echo $VIRTUAL_ENV | sed 's/.virtualenvs/projects/'`
 
+# 's/.virtualenvs/projects/' when your projects are in ~/projects/
+# or when you have your projects in a differetn location then use:
+# 's/.virtualenvs/Desktop\/projecten/' of whatever.
+
 if [ -d $VIRTUAL_ENV_CHECKOUT_DIRECTORY ]; then
     cd $VIRTUAL_ENV_CHECKOUT_DIRECTORY
 else
     echo "Can't find a project named $VIRTUAL_ENV_NAME in Sites. Buildout shortcuts are NOT installed."
     echo "use 'setbuildout' to set buildout root to current directory."
 fi
-
-# if [ -d $VIRTUAL_ENV_NAME ]; then
-# 	cd $VIRTUAL_ENV_NAME
-# fi
 
 function _initialize_shortcuts {
     export PATH="$PATH:$VIRTUAL_ENV_CHECKOUT_DIRECTORY/bin"
