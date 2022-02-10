@@ -1,3 +1,13 @@
+HOW TO USE
+==========
+
+Add the content of postactive to your postactive file in the virtualenv folder usually located at ~/.virtualenvs/postactivate
+
+You may need to change some paths for this to work correctly
+
+Also each individual virtualenv has his own postactivate. You could copy this file for different buildout / environments.
+
+
 Quickly navigate your buildout.
 ===============================
 
