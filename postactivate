@@ -12,9 +12,9 @@ else
     echo "use 'setbuildout' to set buildout root to current directory."
 fi
 
-if [ -d $VIRTUAL_ENV_NAME ]; then
-	cd $VIRTUAL_ENV_NAME
-fi
+# if [ -d $VIRTUAL_ENV_NAME ]; then
+# 	cd $VIRTUAL_ENV_NAME
+# fi
 
 function _initialize_shortcuts {
     export PATH="$PATH:$VIRTUAL_ENV_CHECKOUT_DIRECTORY/bin"
